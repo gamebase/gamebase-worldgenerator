@@ -1,0 +1,13 @@
+{
+    "name": "prospector-worldserver",
+    "description": "WorldServer for Prospector",
+    "version": "0.1.0",
+    "dependencies": {
+        "async": "*",
+        "underscore": "*"
+    },
+    "devDependencies": {
+        "mocha": "*",
+        "chai": "*"
+    }
+}
