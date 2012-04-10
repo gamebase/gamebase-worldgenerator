@@ -1,8 +1,8 @@
 var _ = require('underscore'), 
     async = require('async'),
-    paper = require('paper-geometry'),
-    Random = require('../utils/random'),
-    Tile = require('./tile'),
+    paper = require('paperjs-geometry'),
+    GBTypes = require('gamebase-types'),
+    Tile = GBTypes.Tile,
     Terrain = require('./terrain');
 
 /**
@@ -84,8 +84,8 @@ VectorGenerator.prototype.generateOriginators = function() {
    // Create the originators
    for (var i = 0; i < this.numOrigins; i++) {
        var originator = {
-           x: Random.randomInRange(0, width),
-           y: Random.randomInRange(0, height)
+           x: GBTypes.randomInRange(0, width),
+           y: GBTypes.randomInRange(0, height)
        };
        this.originators.push(originator);
        this.map.setTile(originator.x, originator.y, new Tile(land));
@@ -112,7 +112,7 @@ VectorGenerator.prototype.explodeLandMass = function(originator) {
         var vector = new paper.Point(),
             terminus;
         vector.angle = angle;
-        vector.length = Random.randomInRange(this.vectorMin, this.vectorMax);
+        vector.length = GBTypes.randomInRange(this.vectorMin, this.vectorMax);
         terminus = origin.add(vector);
         var point = {x: Math.round(terminus.x), y: Math.round(terminus.y)};
         
