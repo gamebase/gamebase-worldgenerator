@@ -3,16 +3,20 @@ var async = require('async'),
     fs = require('fs'),
     GBTypes = require('gamebase-types'),
     Map = GBTypes.Map2D,
-    VectorGenerator = require('../src/generator/vectorgenerator');
+    VectorGenerator = require('../src/generator/vectorgenerator'),
+    Visualizer = GBTypes.ASCIIVisualizer;
 
 describe('Test making a map', function() {
     
     it('should correctly create a map', function(done) {
        
-        var world = new Map({size: {width: 300, height: 300}}),
-            generator = new VectorGenerator(world);
+        var world = new Map({size: {width: 70, height: 70}}),
+            generator = new VectorGenerator(world, {maxVectorLength: 20, numOrigins: 10}),
+            visual = new Visualizer({colorize:true});
             
         console.log('Map generated');
+        visual.visualizeTo(world, process.stdout);
+        
         fs.writeFile('world.json', JSON.stringify(world), function (err) {
           if (err) throw err;
           done();

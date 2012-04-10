@@ -36,18 +36,18 @@ VectorGenerator.prototype.initialiseToWater = function(callback) {
         size = this.map.size,
         self = this;
     
-    this.map.tiles = new Array(this.map.size.width);
+    this.map.tiles = new Array(this.map.size.height);
     
-    for (var i = 0; i < size.width; i++) {
-        this.map.tiles[i] = new Array(size.height);
+    for (var i = 0; i < size.height; i++) {
+        this.map.tiles[i] = new Array(size.width);
     }
     
     async.map(this.map.tiles, 
-        function (column, callback) {
-            for (var j = 0; j < column.length; j++) {
-                column[j] = new Tile(water);
+        function (row, callback) {
+            for (var j = 0; j < row.length; j++) {
+                row[j] = new Tile(water);
             }
-            callback(null, column);
+            callback(null, row);
         },
         function (err, results) {
             self.map.tiles = results;
@@ -84,8 +84,8 @@ VectorGenerator.prototype.generateOriginators = function() {
    // Create the originators
    for (var i = 0; i < this.numOrigins; i++) {
        var originator = {
-           x: GBTypes.randomInRange(0, width),
-           y: GBTypes.randomInRange(0, height)
+           x: GBTypes.randomInRange(0, width - 1),
+           y: GBTypes.randomInRange(0, height - 1)
        };
        this.originators.push(originator);
        this.map.setTile(originator.x, originator.y, new Tile(land));
@@ -118,9 +118,9 @@ VectorGenerator.prototype.explodeLandMass = function(originator) {
         
         // Keep the point within the bounds of the map
         if (point.x < 0) point.x = 0;
-        if (point.x >= size.width) point.x = size.width;
+        if (point.x >= size.width) point.x = size.width - 1;
         if (point.y < 0) point.y = 0;
-        if (point.y >= size.height) point.y = size.height;
+        if (point.y >= size.height) point.y = size.height - 1;
         
         points.push(point);
         angle += deltaAngle;
@@ -137,20 +137,23 @@ VectorGenerator.prototype.explodeLandMass = function(originator) {
 VectorGenerator.prototype.createContinents = function(points) {
     
     
-    var boundaries = [],
-        land = {elevation: 2, terrain: Terrain.grass.id};
+    var boundaries = {},
+        land = {elevation: 2, terrain: Terrain.grass.id},
+        self = this;
     
     function addBoundary(point) {
         if (!boundaries[point.x]) {
             boundaries[point.x] = new Array();
         }
-        boundaries[point.x][point.y] = point.y;
+        boundaries[point.x].push(point.y);
     }
     
     for (var i = 0; i < points.length; i++) {
         var point1 = points[i],
             point2 = points[(i+1 == points.length ? 0 : i + 1)],
             nextPoint = {x: point1.x, y: point1.y};
+        
+        console.log('Route between ' + point1.x + ',' + point1.y + ' and ' + point2.x + ',' + point2.y);
         
         addBoundary(point1);
         addBoundary(point2);
@@ -171,13 +174,13 @@ VectorGenerator.prototype.createContinents = function(points) {
     }
     
     // Fill in down from top to bottom
-    for (var i = 0; i < boundaries.length; i++) {
-        var sorted = _.sortBy(boundaries[i], function(y) { return y; });
-        
+    _.each(boundaries, function(value, key) {
+        var sorted = _.sortBy(value, function(y) { return y; });
+
         for (var yPos = sorted[0]; yPos <= sorted[sorted.length - 1]; yPos++) {
-           this.map.setTile(xPos, yPos, new Tile(land));
-        }
-    }
+           self.map.setTile(key, yPos, new Tile(land));
+        }    
+    });
 }
 
 module.exports = VectorGenerator;
