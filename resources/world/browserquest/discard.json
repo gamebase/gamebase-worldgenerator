@@ -1,0 +1,130 @@
+{
+    "plugin": "meanderer",
+    "description": "Generate cliffs",
+    "options": {
+        "sourceLayer": "terrain",
+        "outputLayer": "cliffs",
+        "baseTiles": [1,2],
+        "numOrigins": 7,
+        "continuation": {
+            "probability": 1,
+            "degradation": 0.01
+        },
+        "directionWheel": {
+            "type": "octal",
+            "start": {
+                "name": "south-west",
+                "size": { "width": 1, "height": 4},
+                "tiles": [460,
+                          461,
+                          462,
+                          463],
+                "alignNext": "bottom",
+                "range": 2,
+                "actsAs": 7,
+                "change" : 1
+            },
+            "end": {
+                "name": "south-east",
+                "size": { "width": 1, "height": 4},
+                "tiles": [464,
+                          465,
+                          466,
+                          467],
+                "alignNext": "bottom",
+                "range": 2,
+                "actsAs": 1,
+                "change": -1
+            },
+            "directions": [
+                {
+                    "name": "south",
+                    "size": {"width": 2, "height": 3},
+                    "tiles": [404, 405,
+                              406, 407,
+                              408, 409],
+                    "alignNext": "bottom",
+                    "range": 1
+                },
+                {
+                    "name": "south-east",
+                    "size": {"width": 3, "height": 4},
+                    "tiles": [448, 449, 450,
+                              451, 452, 453,
+                              454, 455, -1,
+                              457, -1, -1],
+                    "alignNext": "right",
+                    "range": 1,
+                    "sameNext": {
+                        "deltaY": -1,
+                        "deltaX": 1
+                    }
+                },
+                {
+                    "name": "east",
+                    "size": {"width": 2, "height": 2},
+                    "tiles": [410, 411,
+                              412, 413],
+                    "alignNext": "right",
+                    "range": 1
+                },
+                {
+                    "name": "north-east",
+                    "size": {"width": 3, "height": 3},
+                    "tiles": [427, -1, -1,
+                              430, 431, -1,
+                              433, 434, 435],
+                    "alignNext": "top",
+                    "range": 1,
+                    "sameNext": {
+                        "deltaY": -1,
+                        "deltaX": -1
+                    }
+                },
+                {
+                    "name": "north",
+                    "size": {"width": 2, "height": 2},
+                    "tiles": [400, 401,
+                              402, 403],
+                    "alignNext": "top",
+                    "range": 1
+                },
+                {
+                    "name": "north-west",
+                    "size": {"width": 3, "height": 3},
+                    "tiles": [-1, -1, 420,
+                              -1, 422, 423,
+                              424, 425, 426],
+                    "alignNext": "left",
+                    "range": 1,
+                    "sameNext": {
+                        "deltaY": 1,
+                        "deltaX": -1
+                    }
+                },
+                {
+                    "name": "west",
+                    "size": {"width": 2, "height": 2},
+                    "tiles": [414, 415,
+                              416, 417],
+                    "alignNext": "left",
+                    "range": 1
+                },
+                {
+                    "name": "south-west",
+                    "size": {"width": 3, "height": 4},
+                    "tiles": [436, 437, 438,
+                              439, 440, 441,
+                              -1, 443, 444,
+                              -1, -1, 447],
+                    "alignNext": "bottom",
+                    "range": 1,
+                    "sameNext": {
+                        "deltaY": 1,
+                        "deltaX": 1
+                    }
+                }
+            ]
+        }
+    }
+},

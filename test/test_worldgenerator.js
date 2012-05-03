@@ -11,7 +11,7 @@ describe('Test making a map', function() {
     it('should correctly create a map', function(done) {
        
         var world = new Map({size: {width: 70, height: 70}}),
-            generator = new VectorGenerator(world, {maxVectorLength: 20, numOrigins: 10}),
+            generator = new VectorGenerator(world, {maxVectorLength: 20, numVectors: 10, numOrigins: 2}),
             visual = new Visualizer({colorize:true});
             
         console.log('Map generated');

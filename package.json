@@ -5,7 +5,8 @@
     "dependencies": {
         "async": "*",
         "gamebase-types": "*",
-        "underscore": "*"
+        "underscore": "*",
+        "xml": "*"
     },
     "devDependencies": {
         "mocha": "*",

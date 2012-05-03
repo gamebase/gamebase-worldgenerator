@@ -1,0 +1,1183 @@
+{
+    "name": "BrowserQuest based world",
+    "parameters": {
+        "type": "Map2D",
+        "size": {
+            "width": 300, 
+            "height": 300
+        }
+    },
+    "tilesets": {
+        "terrain": {
+            "name": "terrain",
+            "tile": {"width": 16, "height": 16},
+            "image": {
+                "source": "./tilesheet.png",
+                "width": "320",
+                "height": "1568"
+            },
+            "tiles": {
+                "9999": {
+                    "gid": 1
+                },
+                "1": {
+                    "name": "grass",
+                    "gid": 153
+                },
+                "2": {
+                    "name": "desert",
+                    "gid": 755
+                },
+                "3": {
+                    "name": "dirt",
+                    "gid": 572
+                },
+                "4": {
+                    "name": "water",
+                    "gid": 406
+                },
+                "100": {
+                    "name": "nw-edge",
+                    "desc": "north-west corner edge",
+                    "gid": 628
+                },
+                "101": {
+                    "name": "n-edge",
+                    "desc": "north edge",
+                    "gid": 629
+                },
+                "102": {
+                    "name": "ne-edge",
+                    "desc": "north-east corner edge",
+                    "gid": 630
+                },
+                "103": {
+                    "name": "w-edge",
+                    "desc": "west edge",
+                    "gid": 648
+                },
+                "104": {
+                    "name": "e-edge",
+                    "desc": "east edge",
+                    "gid": 650
+                },
+                "105": {
+                    "name": "sw-edge",
+                    "desc": "south-west corner edge",
+                    "gid": 688
+                },
+                "106": {
+                    "name": "s-edge",
+                    "desc": "south edge",
+                    "gid": 689
+                },
+                "107": {
+                    "name": "se-edge",
+                    "desc": "south east edge",
+                    "gid": 690
+                },  
+                "108": {
+                    "name": "ws-edge",
+                    "gid": 746
+                },
+                "109": {
+                    "name": "es-edge",
+                    "gid": 747
+                },
+                "120": {
+                    "name": "des nw edge",
+                    "gid": 808
+                },
+                "121": {
+                    "name": "des n edge",
+                    "gid": 809
+                },
+                "122": {
+                    "name": "des ne edge",
+                    "gid": 813
+                },
+                "123": {
+                    "name": "des w edge",
+                    "gid": 888
+                },
+                "124": {
+                    "name": "des e edge",
+                    "gid": 893
+                },
+                "125": {
+                    "name": "des sw edge",
+                    "gid": 908
+                },
+                "126": {
+                    "name": "des s edge",
+                    "gid": 910
+                },
+                "127": {
+                    "name": "des se edge",
+                    "gid": 913
+                },
+                "300": {
+                    "gid": 213
+                },
+                "301": {
+                    "gid": 214
+                },
+                "302": {
+                    "gid": 215
+                },
+                "303": {
+                    "gid": 216
+                },
+                "304": {
+                    "gid": 233
+                },
+                "305": {
+                    "gid": 234
+                },
+                "306": {
+                    "gid": 235
+                },
+                "307": {
+                    "gid": 236
+                },
+                "308": {
+                    "gid": 253
+                },
+                "309": {
+                    "gid": 254
+                },
+                "310": {
+                    "gid": 255
+                },
+                "311": {
+                    "gid": 256
+                },
+                "312": {
+                    "gid": 273
+                },
+                "313": {
+                    "gid": 274
+                },
+                "314": {
+                    "gid": 275
+                },
+                "315": {
+                    "gid": 276
+                },
+                "316": {
+                    "gid": 293
+                },
+                "317": {
+                    "gid": 294
+                },
+                "318": {
+                    "gid": 295
+                },
+                "319": {
+                    "gid": 296
+                },
+                "320": {
+                    "gid": 314
+                },
+                "321": {
+                    "gid": 315
+                },
+                "322": {
+                    "gid": 158
+                },
+                "323": {
+                    "gid": 159
+                },
+                "324": {
+                    "gid": 160
+                },
+                "330": {
+                    "gid": 332
+                },
+                "331": {
+                    "gid": 333
+                },
+                "332": {
+                    "gid": 352
+                },
+                "333": {
+                    "gid": 353
+                },
+                "334": {
+                    "gid": 372
+                },
+                "335": {
+                    "gid": 373
+                },
+                "340": {
+                    "name": "desert shrub",
+                    "gid": 312
+                },
+                "341": {
+                    "name": "desert shrub shadow",
+                    "gid": 313
+                },
+                "350": {
+                    "name": "start of large skeleton",
+                    "gid": 781
+                },
+                "351": {
+                    "name": "large skeleton",
+                    "gid": 782
+                },
+                "352": {
+                    "name": "large skeleton",
+                    "gid": 783
+                },
+                "353": {
+                    "name": "large skeleton",
+                    "gid": 784
+                },
+                "354": {
+                    "name": "large skeleton",
+                    "gid": 801
+                },
+                "355": {
+                    "name": "large skeleton",
+                    "gid": 802
+                },
+                "356": {
+                    "name": "large skeleton",
+                    "gid": 803
+                },
+                "357": {
+                    "name": "large skeleton",
+                    "gid": 804
+                },
+                "358": {
+                    "name": "large skeleton",
+                    "gid": 821
+                },
+                "359": {
+                    "name": "large skeleton",
+                    "gid": 822
+                },
+                "360": {
+                    "name": "large skeleton",
+                    "gid": 823
+                },
+                "361": {
+                    "name": "large skeleton",
+                    "gid": 824
+                },
+                "362": {
+                    "name": "large skeleton",
+                    "gid": 841
+                },
+                "363": {
+                    "name": "large skeleton",
+                    "gid": 842
+                },
+                "364": {
+                    "name": "large skeleton",
+                    "gid": 843
+                },
+                "365": {
+                    "name": "large skeleton",
+                    "gid": 844
+                },
+                "366": {
+                    "name": "large skeleton",
+                    "gid": 861
+                },
+                "367": {
+                    "name": "large skeleton",
+                    "gid": 862
+                },
+                "368": {
+                    "name": "large skeleton",
+                    "gid": 863
+                },
+                "369": {
+                    "name": "large skeleton",
+                    "gid": 864
+                },
+                "370": {
+                    "name": "large skeleton",
+                    "gid": 881
+                },
+                "371": {
+                    "name": "large skeleton",
+                    "gid": 882
+                },
+                "372": {
+                    "name": "large skeleton",
+                    "gid": 883
+                },
+                "373": {
+                    "name": "large skeleton",
+                    "gid": 884
+                },
+                "374": {
+                    "name": "large skeleton",
+                    "gid": 901
+                },
+                "375": {
+                    "name": "large skeleton",
+                    "gid": 902
+                },
+                "376": {
+                    "name": "large skeleton",
+                    "gid": 903
+                },
+                "377": {
+                    "name": "large skeleton",
+                    "gid": 904
+                },
+                "400": {
+                    "name": "north cliff",
+                    "gid": 934
+                },
+                "401": {
+                    "name": "north cliff",
+                    "gid": 937
+                },
+                "402": {
+                    "name": "north cliff",
+                    "gid": 954
+                },
+                "403": {
+                    "name": "north cliff",
+                    "gid": 957
+                },
+                "404": {
+                    "name": "south cliff",
+                    "gid": 1054
+                },
+                "405": {
+                    "name": "south cliff",
+                    "gid": 1055
+                },
+                "406": {
+                    "name": "south cliff",
+                    "gid": 1074
+                },
+                "407": {
+                    "name": "south cliff",
+                    "gid": 1075
+                },
+                "408": {
+                    "name": "south cliff",
+                    "gid": 1094
+                },
+                "409": {
+                    "name": "south cliff",
+                    "gid": 1095
+                },
+                "410": {
+                    "name": "east cliff",
+                    "gid": 999
+                },
+                "411": {
+                    "name": "east cliff",
+                    "gid": 1000
+                },
+                "412": {
+                    "name": "east cliff",
+                    "gid": 1019
+                },
+                "413": {
+                    "name": "east cliff",
+                    "gid": 1020
+                },
+                "414": {
+                    "name": "west cliff",
+                    "gid": 991
+                },
+                "415": {
+                    "name": "west cliff",
+                    "gid": 992
+                },
+                "416": {
+                    "name": "west cliff",
+                    "gid": 1011
+                },
+                "417": {
+                    "name": "west cliff",
+                    "gid": 1012
+                },
+                "418": {
+                    "name": "north-west cliff",
+                    "gid": 931
+                },
+                "419": {
+                    "name": "north-west cliff",
+                    "gid": 932
+                },
+                "420": {
+                    "name": "north-west cliff",
+                    "gid": 933
+                },
+                "421": {
+                    "name": "north-west cliff",
+                    "gid": 951
+                },
+                "422": {
+                    "name": "north-west cliff",
+                    "gid": 952
+                },
+                "423": {
+                    "name": "north-west cliff",
+                    "gid": 953
+                },
+                "424": {
+                    "name": "north-west cliff",
+                    "gid": 971
+                },
+                "425": {
+                    "name": "north-west cliff",
+                    "gid": 972
+                },
+                "426": {
+                    "name": "north-west cliff",
+                    "gid": 973
+                },
+                "427": {
+                    "name": "north-east cliff",
+                    "gid": 938
+                },
+                "428": {
+                    "name": "north-east cliff",
+                    "gid": 939
+                },
+                "429": {
+                    "name": "north-east cliff",
+                    "gid": 940
+                },
+                "430": {
+                    "name": "north-east cliff",
+                    "gid": 958
+                },
+                "431": {
+                    "name": "north-east cliff",
+                    "gid": 959
+                },
+                "432": {
+                    "name": "north-east cliff",
+                    "gid": 960
+                },
+                "433": {
+                    "name": "north-east cliff",
+                    "gid": 978
+                },
+                "434": {
+                    "name": "north-east cliff",
+                    "gid": 979
+                },
+                "435": {
+                    "name": "north-east cliff",
+                    "gid": 980
+                },
+                "436": {
+                    "name": "south-west cliff",
+                    "gid": 1031
+                },
+                "437": {
+                    "name": "south-west cliff",
+                    "gid": 1032
+                },
+                "438": {
+                    "name": "south-west cliff",
+                    "gid": 1033
+                },
+                "439": {
+                    "name": "south-west cliff",
+                    "gid": 1051
+                },
+                "440": {
+                    "name": "south-west cliff",
+                    "gid": 1052
+                },
+                "441": {
+                    "name": "south-west cliff",
+                    "gid": 1053
+                },
+                "442": {
+                    "name": "south-west cliff",
+                    "gid": 1071
+                },
+                "443": {
+                    "name": "south-west cliff",
+                    "gid": 1072
+                },
+                "444": {
+                    "name": "south-west cliff",
+                    "gid": 1073
+                },
+                "445": {
+                    "name": "south-west cliff",
+                    "gid": 1091
+                },
+                "446": {
+                    "name": "south-west cliff",
+                    "gid": 1092
+                },
+                "447": {
+                    "name": "south-west cliff",
+                    "gid": 1093
+                },
+                "448": {
+                    "name": "south-east cliff",
+                    "gid": 1038
+                },
+                "449": {
+                    "name": "south-east cliff",
+                    "gid": 1039
+                },
+                "450": {
+                    "name": "south-east cliff",
+                    "gid": 1040
+                },
+                "451": {
+                    "name": "south-east cliff",
+                    "gid": 1058
+                },
+                "452": {
+                    "name": "south-east cliff",
+                    "gid": 1059
+                },
+                "453": {
+                    "name": "south-east cliff",
+                    "gid": 1060
+                },
+                "454": {
+                    "name": "south-east cliff",
+                    "gid": 1078
+                },
+                "455": {
+                    "name": "south-east cliff",
+                    "gid": 1079
+                },
+                "456": {
+                    "name": "south-east cliff",
+                    "gid": 1080
+                },
+                "457": {
+                    "name": "south-east cliff",
+                    "gid": 1098
+                },
+                "458": {
+                    "name": "south-east cliff",
+                    "gid": 1099
+                },
+                "459": {
+                    "name": "south-east cliff",
+                    "gid": 2000
+                },
+                "460": {
+                    "name": "south-west terminator",
+                    "gid": 956
+                },
+                "461": {
+                    "name": "south-west terminator",
+                    "gid": 976
+                },
+                "462": {
+                    "name": "south-west terminator",
+                    "gid": 996
+                },
+                "463": {
+                    "name": "south-west terminator",
+                    "gid": 1016
+                },
+                "464": {
+                    "name": "south-east terminator",
+                    "gid": 955
+                },
+                "465": {
+                    "name": "south-east terminator",
+                    "gid": 975
+                },
+                "466": {
+                    "name": "south-east terminator",
+                    "gid": 995
+                },
+                "467": {
+                    "name": "south-east terminator",
+                    "gid": 1015
+                },
+                "500": {
+                    "name": "wave 1",
+                    "gid": 426
+                },
+                "501": {
+                    "name": "wave 2",
+                    "gid": 707
+                },
+                "502": {
+                    "name": "wave 3",
+                    "gid": 709
+                },
+                "503": {
+                    "name": "water rock 1",
+                    "gid": 729
+                },
+                "504": {
+                    "name": "water rock 2",
+                    "gid": 726
+                },
+                "505": {
+                    "name": "water rock 3",
+                    "gid": 727
+                },
+                "506": {
+                    "name": "water rock 4",
+                    "gid": 728
+                },
+                "507": {
+                    "name": "islet",
+                    "gid": 671
+                },
+                "508": {
+                    "name": "islet",
+                    "gid": 672
+                },
+                "509": {
+                    "name": "islet",
+                    "gid": 691
+                },
+                "510": {
+                    "name": "islet",
+                    "gid": 692
+                }
+            }
+        }
+    },
+    "phases": [
+        {
+            "plugin": "filler",
+            "description": "Fill the map base tiles in",
+            "options": {
+                "outputLayer": "terrain",
+                "fillTile": 4
+            }
+        },
+        {
+            "plugin": "vectorgenerator",
+            "description": "Generate the continents",
+            "options": {
+                "outputLayer": "terrain",
+                "maxVectorLength": 40, 
+                "minVectorLength": 20, 
+                "numVectors": 20,
+                "numOrigins": 32,
+                "baseTile": 4,
+                "terrainTile": 1
+            }
+        },
+        {
+            "plugin": "biomegenerator",
+            "description": "Roughen coastlines",
+            "options": {
+                "sourceLayer": "terrain",
+                "outputLayer": "terrain",
+                "baseTerrains": [4],
+                "biomes": [
+                    {
+                        "name": "grass",
+                        "biomeTiles": [1],
+                        "chunkSize": {
+                            "width": 2,
+                            "height": 2
+                        },
+                        "output": {
+                            "1": 1
+                        },
+                        "passes": 2,
+                        "fillPass": true,
+                        "probability": {
+                            "normal": 0,
+                            "adjacent": {
+                                "type": "exponential",
+                                "options": {
+                                    "base": 0.1,
+                                    "value": 0.02,
+                                    "factor": 2,
+                                    "ceiling": 0.50
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "plugin": "biomegenerator",
+            "description": "Generate the biomes",
+            "options": {
+                "sourceLayer": "terrain",
+                "outputLayer": "terrain",
+                "baseTerrains": [1],
+                "biomes": [
+                    {
+                        "name": "desert",
+                        "biomeTiles": [2],
+                        "chunkSize": {
+                            "width": 3,
+                            "height": 3
+                        },
+                        "output": {
+                            "2": 1
+                        },
+                        "passes": 2,
+                        "fillPass": true,
+                        "probability": {
+                            "normal": 0.0005,
+                            "adjacent": {
+                                "type": "exponential",
+                                "options": {
+                                    "base": 0.1,
+                                    "value": 0.02,
+                                    "factor": 2,
+                                    "ceiling": 0.50
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "plugin": "objectrandomizer",
+            "description": "Generate terrain artifacts",
+            "options": {
+                "outputLayer": "terrain artifacts",
+                "sourceLayer": "terrain",
+                "sections": [
+                    {
+                        "baseTiles": [1],
+                        "objects": [
+                            {
+                                "name": "flower 1",
+                                "probability": 0.01,
+                                "sprite": {
+                                    "width": 1,
+                                    "tiles": [322]
+                                }
+                            },
+                            {
+                                "name": "flower 2",
+                                "probability": 0.01,
+                                "sprite": {
+                                    "width": 1,
+                                    "tiles": [323]
+                                }
+                            },
+                            {
+                                "name": "flower 3",
+                                "probability": 0.01,
+                                "sprite": {
+                                    "width": 1,
+                                    "tiles": [324]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "baseTiles": [2],
+                        "objects": [
+                            {
+                                "name": "desert shrub",
+                                "probability": 0.01,
+                                "sprite": {
+                                    "width": 2,
+                                    "tiles": [340, 341],
+                                    "collisions": [
+                                        [0, 0]
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "baseTiles": [4],
+                        "objects": [
+                            {
+                                "name": "wave 1",
+                                "probability": 0.01,
+                                "sprite": {
+                                    "width": 1,
+                                    "tiles": [500]
+                                }
+                            },
+                            {
+                                "name": "wave 2",
+                                "probability": 0.01,
+                                "sprite": {
+                                    "width": 1,
+                                    "tiles": [501]
+                                }
+                            },
+                            {
+                                "name": "wave 3",
+                                "probability": 0.01,
+                                "sprite": {
+                                    "width": 1,
+                                    "tiles": [502]
+                                }
+                            },
+                            {
+                                "name": "rock 1",
+                                "probability": 0.001,
+                                "sprite": {
+                                    "width": 1,
+                                    "tiles": [503]
+                                }
+                            },
+                            {
+                                "name": "rock 2",
+                                "probability": 0.001,
+                                "sprite": {
+                                    "width": 1,
+                                    "tiles": [504]
+                                }
+                            },
+                            {
+                                "name": "rock 3",
+                                "probability": 0.001,
+                                "sprite": {
+                                    "width": 1,
+                                    "tiles": [505]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "plugin": "edger",
+            "description": "Generate the desert edges",
+            "options": {
+                "log": true,
+                "outputLayer": "desertEdges",
+                "sourceLayer": "terrain",
+                "sourceTiles": [2],
+                "nextToTiles": [1],
+                "invert": true,
+                "invertTo": 1,
+                "edges": {
+                
+                    "000010000": "2",
+            
+                    "000000010": "121",
+                    "010000000": "126",
+                    "000001000": "123",
+                    "000100000": "124",
+                    
+                    "000001011": "120",
+                    "000100010": "122",
+                
+                    "010001000": "125",
+                    "010100000": "127"
+                
+                }    
+            }
+        },
+        {
+            "plugin": "edger",
+            "description": "Generate the continent edges",
+            "options": {
+                "outputLayer": "continentEdges",
+                "sourceLayer": "terrain",
+                "sourceTiles": [1, 2],
+                "nextToTiles": [4],
+                "edges": {
+                    "100000000": "108",
+                    "001000000": "109",
+
+                    "000000010": "101",
+                    "000000111": "101",
+                    "000000011": "101",
+                    "000000110": "101",                
+
+                    "001001001": "103",
+                    "000001001": "103",
+                    "001001000": "103",
+                    "000001000": "103",
+                    "000100000": "104",
+
+                    "000001011": "100",
+                    "000100010": "102",
+                    "010000000": "106",
+
+                    "010001000": "105",
+                    "111000000": "106",
+                    "010100000": "107"
+
+                }    
+            }
+        },
+        {
+            "plugin": "enclosedarea",
+            "description": "Generate plateaus",
+            "options": {
+                "sourceLayer": "terrain",
+                "outputLayer": "plateaus",
+                "baseTiles": [1,2,4],
+                "outputTile": 1,
+                "numOrigins": 7,
+                "minimumMovements": 3,
+                "changeProbability": 0.4,
+                "chunkSize": {
+                    "width": 2,
+                    "height": 2
+                }
+            }
+        },
+        {
+            "plugin": "objectrandomizer",
+            "description": "Generate plateau artifacts",
+            "options": {
+                "outputLayer": "plateau artifacts",
+                "sourceLayer": "plateaus",
+                "sections": [
+                    {
+                        "baseTiles": [1],
+                        "objects": [
+                            {
+                                "name": "flower 1",
+                                "probability": 0.01,
+                                "sprite": {
+                                    "width": 1,
+                                    "tiles": [322]
+                                }
+                            },
+                            {
+                                "name": "flower 2",
+                                "probability": 0.01,
+                                "sprite": {
+                                    "width": 1,
+                                    "tiles": [323]
+                                }
+                            },
+                            {
+                                "name": "flower 3",
+                                "probability": 0.01,
+                                "sprite": {
+                                    "width": 1,
+                                    "tiles": [324]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "plugin": "advancededger",
+            "description": "Generate cliffs",
+            "options": {
+                "sourceLayer": "plateaus",
+                "outputLayer": "plateauCliffs",
+                "sourceTiles": [-1],
+                "nextToTiles": [1],
+                "objects": {
+                    "southface-continual": {
+                        "width": 2,
+                        "tiles": [404, 405,
+                                  406, 407,
+                                  408, 409],
+                        "offset": {"x":0, "y": -1},
+                        "collisions": "all" 
+                    },
+                    "southface-single": {
+                        "width": 1,
+                        "tiles": [404,
+                                  406,
+                                  408],
+                        "offset": {"x": 0, "y": -1},
+                        "collisions": "all"
+                    },
+                    "northface": {
+                        "width": 1,
+                        "tiles": [400,
+                                  402],
+                        "collisions": "all"
+                    },
+                    "westface": {
+                        "width": 2,
+                        "tiles": [414, 415],
+                        "collisions": "all"
+                    },
+                    "eastface": {
+                        "width": 2,
+                        "tiles": [410, 411],
+                        "offset": {"x": -1, "y": 0},
+                        "collisions": "all"
+                    },
+                    "northwestface": {
+                        "width": 3,
+                        "tiles": [-1, -1, 420,
+                                  -1, 422, 423,
+                                  424, 425, 426],
+                        "offset": {"x": -1, "y": -1},
+                        "collisions": "all",
+                        "overwrite": true
+                    },
+                    "northeastface": {
+                        "width": 3,
+                        "tiles": [427, -1, -1,
+                                  430, 431, -1,
+                                  433, 434, 435],
+                        "offset": {"x": -1, "y": -1},
+                        "collisions": "all",
+                        "overwrite": true
+                    },
+                    "southwestface": {
+                        "width": 3,
+                        "tiles": [436, 437, 438,
+                                  439, 440, 441,
+                                  -1, 443, 444,
+                                  -1, -1, 447],
+                        "offset": {"x": -1, "y": -1},
+                        "collisions": "all",
+                        "overwrite": true
+                    },
+                    "southeastface": {
+                        "width": 3,
+                        "tiles": [448, 449, 450,
+                                  451, 452, 453,
+                                  454, 455, -1,
+                                  457, -1, -1],
+                        "offset": {"x": -1, "y": -1},
+                        "collisions": "all",
+                        "overwrite": true
+                    }
+                },
+                "edges": [
+                    {"000000111": "southface-continual"},
+                    {"000000111": "southface-single"},
+                    {"111000000": "northface"},
+                    {"100100100": "westface"},
+                    {"001001001": "eastface"},
+                    {"110100000": "northwestface"},
+                    {"011001000": "northeastface"},
+                    {"000100110": "southwestface"},
+                    {"000001011": "southeastface"}
+                ]
+            }
+        },
+        {
+            "plugin": "layerdifference",
+            "description": "Removing invisibile plateau terrains",
+            "options": {
+                "sourceLayers": ["plateaus"],
+                "outputLayer": "terrain"
+            }
+        },
+        {
+            "plugin": "objectrandomizer",
+            "description": "Generate trees and large objects",
+            "options": {
+                "outputLayer": "trees",
+                "sourceLayer": "terrain",
+                "sections": [
+                    {
+                        "baseTiles": [1],
+                        "objects": [
+                            {
+                                "name": "grass tree",
+                                "probability": 0.01,
+                                "sprite": {
+                                    "width": 4,
+                                    "tiles": [300, 301, 302, 303,
+                                              304, 305, 306, 307,
+                                              308, 309, 310, 311,
+                                              312, 313, 314, 315,
+                                              316, 317, 318, 319,
+                                              -1, 320, 321, -1],
+                                    "origin": [1, 3],
+                                    "baseSize": [2, 3],
+                                    "collisions": [
+                                        [1, 3], [1, 4], [2, 3], [2, 4]
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "baseTiles": [2],
+                        "objects": [
+                            {
+                                "name": "cactus",
+                                "probability": 0.01,
+                                "sprite": {
+                                    "width": 2,
+                                    "tiles": [330, 331,
+                                              332, 333,
+                                              334, 335],
+                                    "origin": [0, 2],
+                                    "baseSize": [1, 2],
+                                    "collisions": [
+                                        [1, 0], [1, 1], [2, 0], [2, 1]
+                                    ]
+                                }
+                            },
+                            {
+                                "name": "large skeleton",
+                                "probability": 0.001,
+                                "sprite": {
+                                    "width": 6,
+                                    "tiles": [-1, 350, 351, 352, 353, -1,
+                                              -1, 354, 355, 356, 357, -1,
+                                              -1, 358, 359, 360, 361, -1,
+                                              -1, 362, 363, 364, 365, -1,
+                                              -1, 366, 367, 368, 369, -1,
+                                              -1, 370, 371, 372, 373, -1,
+                                              -1, 374, 375, 376, 377, -1],
+                                    "origin": [1, 0],
+                                    "baseSize": [4, 7],
+                                    "collisions": [
+                                        [1, 0], [2, 0], [3, 0], [4, 0],
+                                        [1, 1], [2, 1], [3, 1], [4, 1],
+                                        [1, 2], [2, 2], [3, 2], [4, 2],
+                                        [1, 3], [2, 3], [3, 3], [4, 3]
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "plugin": "objectrandomizer",
+            "description": "Generate plateau objects",
+            "options": {
+                "outputLayer": "plateauObjects",
+                "sourceLayer": "plateaus",
+                "sections": [
+                    {
+                        "baseTiles": [1],
+                        "objects": [
+                            {
+                                "name": "grass tree",
+                                "probability": 0.01,
+                                "sprite": {
+                                    "width": 4,
+                                    "tiles": [300, 301, 302, 303,
+                                              304, 305, 306, 307,
+                                              308, 309, 310, 311,
+                                              312, 313, 314, 315,
+                                              316, 317, 318, 319,
+                                              -1, 320, 321, -1],
+                                    "origin": [1, 3],
+                                    "baseSize": [2, 3],
+                                    "collisions": [
+                                        [1, 3], [1, 4], [2, 3], [2, 4]
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}
