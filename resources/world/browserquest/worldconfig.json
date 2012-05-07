@@ -8,17 +8,31 @@
         }
     },
     "tilesets": {
-        "terrain": {
-            "name": "terrain",
+        "tilesheet": {
+            "name": "tilesheet",
             "tile": {"width": 16, "height": 16},
             "image": {
                 "source": "./tilesheet.png",
                 "width": "320",
                 "height": "1568"
             },
+            "types": {
+                "collide": {
+                    "description": "Collidable",
+                    "properties": {
+                        "c": ""
+                    }
+                },
+                "walkbehind": {
+                    "description": "Sprites can go behind this",
+                    "properties": {
+                        "v": ""
+                    }
+                }
+            },
             "tiles": {
                 "9999": {
-                    "gid": 1
+                    "gid":      1
                 },
                 "1": {
                     "name": "grass",
@@ -34,55 +48,66 @@
                 },
                 "4": {
                     "name": "water",
-                    "gid": 406
+                    "gid": 406,
+                    "types": ["collide"]
                 },
                 "100": {
                     "name": "nw-edge",
                     "desc": "north-west corner edge",
-                    "gid": 628
+                    "gid": 628,
+                    "types": ["collide"]
                 },
                 "101": {
                     "name": "n-edge",
                     "desc": "north edge",
-                    "gid": 629
+                    "gid": 629,
+                    "types": ["collide"]
                 },
                 "102": {
                     "name": "ne-edge",
                     "desc": "north-east corner edge",
-                    "gid": 630
+                    "gid": 630,
+                    "types": ["collide"]
                 },
                 "103": {
                     "name": "w-edge",
                     "desc": "west edge",
-                    "gid": 648
+                    "gid": 648,
+                    "types": ["collide"]
                 },
                 "104": {
                     "name": "e-edge",
                     "desc": "east edge",
-                    "gid": 650
+                    "gid": 650,
+                    "types": ["collide"]
                 },
                 "105": {
                     "name": "sw-edge",
                     "desc": "south-west corner edge",
-                    "gid": 688
+                    "gid": 688,
+                    "types": ["collide"]
                 },
                 "106": {
                     "name": "s-edge",
                     "desc": "south edge",
-                    "gid": 689
+                    "gid": 689,
+                    "types": ["collide"]
                 },
                 "107": {
                     "name": "se-edge",
                     "desc": "south east edge",
-                    "gid": 690
+                    "gid": 690,
+                    "types": ["collide"]
                 },  
                 "108": {
                     "name": "ws-edge",
-                    "gid": 746
+                    "gid": 746,
+                    "types": ["collide"]
                 },
                 "109": {
                     "name": "es-edge",
-                    "gid": 747
+                    "gid": 747,
+                    "types": ["collide"]
                 },
                 "120": {
                     "name": "des nw edge",
@@ -117,61 +142,79 @@
                     "gid": 913
                 },
                 "300": {
-                    "gid": 213
+                    "gid": 213,
+                    "types": ["walkbehind"]
                 },
                 "301": {
-                    "gid": 214
+                    "gid": 214,
+                    "types": ["walkbehind"]
                 },
                 "302": {
-                    "gid": 215
+                    "gid": 215,
+                    "types": ["walkbehind"]
                 },
                 "303": {
-                    "gid": 216
+                    "gid": 216,
+                    "types": ["walkbehind"]
                 },
                 "304": {
-                    "gid": 233
+                    "gid": 233,
+                    "types": ["walkbehind"]
                 },
                 "305": {
-                    "gid": 234
+                    "gid": 234,
+                    "types": ["walkbehind"]
                 },
                 "306": {
-                    "gid": 235
+                    "gid": 235,
+                    "types": ["walkbehind"]
                 },
                 "307": {
-                    "gid": 236
+                    "gid": 236,
+                    "types": ["walkbehind"]
                 },
                 "308": {
-                    "gid": 253
+                    "gid": 253,
+                    "types": ["walkbehind"]
                 },
                 "309": {
-                    "gid": 254
+                    "gid": 254,
+                    "types": ["walkbehind"]
                 },
                 "310": {
-                    "gid": 255
+                    "gid": 255,
+                    "types": ["walkbehind"]
                 },
                 "311": {
-                    "gid": 256
+                    "gid": 256,
+                    "types": ["walkbehind"]
                 },
                 "312": {
-                    "gid": 273
+                    "gid": 273,
+                    "types": ["walkbehind"]
                 },
                 "313": {
-                    "gid": 274
+                    "gid": 274,
+                    "types": ["collide", "walkbehind"]
                 },
                 "314": {
-                    "gid": 275
+                    "gid": 275,
+                    "types": ["collide", "walkbehind"]
                 },
                 "315": {
-                    "gid": 276
+                    "gid": 276,
+                    "types": ["walkbehind"]
                 },
                 "316": {
                     "gid": 293
                 },
                 "317": {
-                    "gid": 294
+                    "gid": 294,
+                    "types": ["collide"]
                 },
                 "318": {
-                    "gid": 295
+                    "gid": 295,
+                    "types": ["collide"]
                 },
                 "319": {
                     "gid": 296
@@ -192,22 +235,28 @@
                     "gid": 160
                 },
                 "330": {
-                    "gid": 332
+                    "gid": 332,
+                    "types": ["collide"]
                 },
                 "331": {
-                    "gid": 333
+                    "gid": 333,
+                    "types": ["collide"]
                 },
                 "332": {
-                    "gid": 352
+                    "gid": 352,
+                    "types": ["collide"]
                 },
                 "333": {
-                    "gid": 353
+                    "gid": 353,
+                    "types": ["collide"]
                 },
                 "334": {
-                    "gid": 372
+                    "gid": 372,
+                    "types": ["collide"]
                 },
                 "335": {
-                    "gid": 373
+                    "gid": 373,
+                    "types": ["collide"]
                 },
                 "340": {
                     "name": "desert shrub",
@@ -219,67 +268,83 @@
                 },
                 "350": {
                     "name": "start of large skeleton",
-                    "gid": 781
+                    "gid": 781,
+                    "types": ["collide"]
                 },
                 "351": {
                     "name": "large skeleton",
-                    "gid": 782
+                    "gid": 782,
+                    "types": ["collide"]
                 },
                 "352": {
                     "name": "large skeleton",
-                    "gid": 783
+                    "gid": 783,
+                    "types": ["collide"]
                 },
                 "353": {
                     "name": "large skeleton",
-                    "gid": 784
+                    "gid": 784,
+                    "types": ["collide"]
                 },
                 "354": {
                     "name": "large skeleton",
-                    "gid": 801
+                    "gid": 801,
+                    "types": ["collide"]
                 },
                 "355": {
                     "name": "large skeleton",
-                    "gid": 802
+                    "gid": 802,
+                    "types": ["collide"]
                 },
                 "356": {
                     "name": "large skeleton",
-                    "gid": 803
+                    "gid": 803,
+                    "types": ["collide"]
                 },
                 "357": {
                     "name": "large skeleton",
-                    "gid": 804
+                    "gid": 804,
+                    "types": ["collide"]
                 },
                 "358": {
                     "name": "large skeleton",
-                    "gid": 821
+                    "gid": 821,
+                    "types": ["collide"]
                 },
                 "359": {
                     "name": "large skeleton",
-                    "gid": 822
+                    "gid": 822,
+                    "types": ["collide"]
                 },
                 "360": {
                     "name": "large skeleton",
-                    "gid": 823
+                    "gid": 823,
+                    "types": ["collide"]
                 },
                 "361": {
                     "name": "large skeleton",
-                    "gid": 824
+                    "gid": 824,
+                    "types": ["collide"]
                 },
                 "362": {
                     "name": "large skeleton",
-                    "gid": 841
+                    "gid": 841,
+                    "types": ["collide"]
                 },
                 "363": {
                     "name": "large skeleton",
-                    "gid": 842
+                    "gid": 842,
+                    "types": ["collide"]
                 },
                 "364": {
                     "name": "large skeleton",
-                    "gid": 843
+                    "gid": 843,
+                    "types": ["collide"]
                 },
                 "365": {
                     "name": "large skeleton",
-                    "gid": 844
+                    "gid": 844,
+                    "types": ["collide"]
                 },
                 "366": {
                     "name": "large skeleton",
@@ -331,243 +396,303 @@
                 },
                 "400": {
                     "name": "north cliff",
-                    "gid": 934
+                    "gid": 934,
+                    "types": ["collide"]
                 },
                 "401": {
                     "name": "north cliff",
-                    "gid": 937
+                    "gid": 937,
+                    "types": ["collide"]
                 },
                 "402": {
                     "name": "north cliff",
-                    "gid": 954
+                    "gid": 954,
+                    "types": ["collide"]
                 },
                 "403": {
                     "name": "north cliff",
-                    "gid": 957
+                    "gid": 957,
+                    "types": ["collide"]
                 },
                 "404": {
                     "name": "south cliff",
-                    "gid": 1054
+                    "gid": 1054,
+                    "types": ["collide"]
                 },
                 "405": {
                     "name": "south cliff",
-                    "gid": 1055
+                    "gid": 1055,
+                    "types": ["collide"]
                 },
                 "406": {
                     "name": "south cliff",
-                    "gid": 1074
+                    "gid": 1074,
+                    "types": ["collide"]
                 },
                 "407": {
                     "name": "south cliff",
-                    "gid": 1075
+                    "gid": 1075,
+                    "types": ["collide"]
                 },
                 "408": {
                     "name": "south cliff",
-                    "gid": 1094
+                    "gid": 1094,
+                    "types": ["collide"]
                 },
                 "409": {
                     "name": "south cliff",
-                    "gid": 1095
+                    "gid": 1095,
+                    "types": ["collide"]
                 },
                 "410": {
                     "name": "east cliff",
-                    "gid": 999
+                    "gid": 999,
+                    "types": ["collide"]
                 },
                 "411": {
                     "name": "east cliff",
-                    "gid": 1000
+                    "gid": 1000,
+                    "types": ["collide"]
                 },
                 "412": {
                     "name": "east cliff",
-                    "gid": 1019
+                    "gid": 1019,
+                    "types": ["collide"]
                 },
                 "413": {
                     "name": "east cliff",
-                    "gid": 1020
+                    "gid": 1020,
+                    "types": ["collide"]
                 },
                 "414": {
                     "name": "west cliff",
-                    "gid": 991
+                    "gid": 991,
+                    "types": ["collide"]
                 },
                 "415": {
                     "name": "west cliff",
-                    "gid": 992
+                    "gid": 992,
+                    "types": ["collide"]
                 },
                 "416": {
                     "name": "west cliff",
-                    "gid": 1011
+                    "gid": 1011,
+                    "types": ["collide"]
                 },
                 "417": {
                     "name": "west cliff",
-                    "gid": 1012
+                    "gid": 1012,
+                    "types": ["collide"]
                 },
                 "418": {
                     "name": "north-west cliff",
-                    "gid": 931
+                    "gid": 931,
+                    "types": ["collide"]
                 },
                 "419": {
                     "name": "north-west cliff",
-                    "gid": 932
+                    "gid": 932,
+                    "types": ["collide"]
                 },
                 "420": {
                     "name": "north-west cliff",
-                    "gid": 933
+                    "gid": 933,
+                    "types": ["collide"]
                 },
                 "421": {
                     "name": "north-west cliff",
-                    "gid": 951
+                    "gid": 951,
+                    "types": ["collide"]
                 },
                 "422": {
                     "name": "north-west cliff",
-                    "gid": 952
+                    "gid": 952,
+                    "types": ["collide"]
                 },
                 "423": {
                     "name": "north-west cliff",
-                    "gid": 953
+                    "gid": 953,
+                    "types": ["collide"]
                 },
                 "424": {
                     "name": "north-west cliff",
-                    "gid": 971
+                    "gid": 971,
+                    "types": ["collide"]
                 },
                 "425": {
                     "name": "north-west cliff",
-                    "gid": 972
+                    "gid": 972,
+                    "types": ["collide"]
                 },
                 "426": {
                     "name": "north-west cliff",
-                    "gid": 973
+                    "gid": 973,
+                    "types": ["collide"]
                 },
                 "427": {
                     "name": "north-east cliff",
-                    "gid": 938
+                    "gid": 938,
+                    "types": ["collide"]
                 },
                 "428": {
                     "name": "north-east cliff",
-                    "gid": 939
+                    "gid": 939,
+                    "types": ["collide"]
                 },
                 "429": {
                     "name": "north-east cliff",
-                    "gid": 940
+                    "gid": 940,
+                    "types": ["collide"]
                 },
                 "430": {
                     "name": "north-east cliff",
-                    "gid": 958
+                    "gid": 958,
+                    "types": ["collide"]
                 },
                 "431": {
                     "name": "north-east cliff",
-                    "gid": 959
+                    "gid": 959,
+                    "types": ["collide"]
                 },
                 "432": {
                     "name": "north-east cliff",
-                    "gid": 960
+                    "gid": 960,
+                    "types": ["collide"]
                 },
                 "433": {
                     "name": "north-east cliff",
-                    "gid": 978
+                    "gid": 978,
+                    "types": ["collide"]
                 },
                 "434": {
                     "name": "north-east cliff",
-                    "gid": 979
+                    "gid": 979,
+                    "types": ["collide"]
                 },
                 "435": {
                     "name": "north-east cliff",
-                    "gid": 980
+                    "gid": 980,
+                    "types": ["collide"]
                 },
                 "436": {
                     "name": "south-west cliff",
-                    "gid": 1031
+                    "gid": 1031,
+                    "types": ["collide"]
                 },
                 "437": {
                     "name": "south-west cliff",
-                    "gid": 1032
+                    "gid": 1032,
+                    "types": ["collide"]
                 },
                 "438": {
                     "name": "south-west cliff",
-                    "gid": 1033
+                    "gid": 1033,
+                    "types": ["collide"]
                 },
                 "439": {
                     "name": "south-west cliff",
-                    "gid": 1051
+                    "gid": 1051,
+                    "types": ["collide"]
                 },
                 "440": {
                     "name": "south-west cliff",
-                    "gid": 1052
+                    "gid": 1052,
+                    "types": ["collide"]
                 },
                 "441": {
                     "name": "south-west cliff",
-                    "gid": 1053
+                    "gid": 1053,
+                    "types": ["collide"]
                 },
                 "442": {
                     "name": "south-west cliff",
-                    "gid": 1071
+                    "gid": 1071,
+                    "types": ["collide"]
                 },
                 "443": {
                     "name": "south-west cliff",
-                    "gid": 1072
+                    "gid": 1072,
+                    "types": ["collide"]
                 },
                 "444": {
                     "name": "south-west cliff",
-                    "gid": 1073
+                    "gid": 1073,
+                    "types": ["collide"]
                 },
                 "445": {
                     "name": "south-west cliff",
-                    "gid": 1091
+                    "gid": 1091,
+                    "types": ["collide"]
                 },
                 "446": {
                     "name": "south-west cliff",
-                    "gid": 1092
+                    "gid": 1092,
+                    "types": ["collide"]
                 },
                 "447": {
                     "name": "south-west cliff",
-                    "gid": 1093
+                    "gid": 1093,
+                    "types": ["collide"]
                 },
                 "448": {
                     "name": "south-east cliff",
-                    "gid": 1038
+                    "gid": 1038,
+                    "types": ["collide"]
                 },
                 "449": {
                     "name": "south-east cliff",
-                    "gid": 1039
+                    "gid": 1039,
+                    "types": ["collide"]
                 },
                 "450": {
                     "name": "south-east cliff",
-                    "gid": 1040
+                    "gid": 1040,
+                    "types": ["collide"]
                 },
                 "451": {
                     "name": "south-east cliff",
-                    "gid": 1058
+                    "gid": 1058,
+                    "types": ["collide"]
                 },
                 "452": {
                     "name": "south-east cliff",
-                    "gid": 1059
+                    "gid": 1059,
+                    "types": ["collide"]
                 },
                 "453": {
                     "name": "south-east cliff",
-                    "gid": 1060
+                    "gid": 1060,
+                    "types": ["collide"]
                 },
                 "454": {
                     "name": "south-east cliff",
-                    "gid": 1078
+                    "gid": 1078,
+                    "types": ["collide"]
                 },
                 "455": {
                     "name": "south-east cliff",
-                    "gid": 1079
+                    "gid": 1079,
+                    "types": ["collide"]
                 },
                 "456": {
                     "name": "south-east cliff",
-                    "gid": 1080
+                    "gid": 1080,
+                    "types": ["collide"]
                 },
                 "457": {
                     "name": "south-east cliff",
-                    "gid": 1098
+                    "gid": 1098,
+                    "types": ["collide"]
                 },
                 "458": {
                     "name": "south-east cliff",
-                    "gid": 1099
+                    "gid": 1099,
+                    "types": ["collide"]
                 },
                 "459": {
                     "name": "south-east cliff",
-                    "gid": 2000
+                    "gid": 1100,
+                    "types": ["collide"]
                 },
                 "460": {
                     "name": "south-west terminator",
@@ -646,9 +771,27 @@
                     "gid": 692
                 }
             }
+        },
+        "mobs": {
+            "name": "mobs",
+            "tile": {"width": 16, "height": 16},
+            "image": {
+                "source": "./mobset.png",
+                "width": "320",
+                "height": "200"
+            },
+            "firstgid": "1961"
         }
     },
     "phases": [
+        {
+            "plugin": "filler",
+            "description": "Empty tile layer to support BrowserQuest",
+            "options": {
+                "outputLayer": "empty",
+                "fillTile": 0
+            }
+        },
         {
             "plugin": "filler",
             "description": "Fill the map base tiles in",
@@ -786,10 +929,7 @@
                                 "probability": 0.01,
                                 "sprite": {
                                     "width": 2,
-                                    "tiles": [340, 341],
-                                    "collisions": [
-                                        [0, 0]
-                                    ]
+                                    "tiles": [340, 341]
                                 }
                             }
                         ]
@@ -983,33 +1123,28 @@
                         "tiles": [404, 405,
                                   406, 407,
                                   408, 409],
-                        "offset": {"x":0, "y": -1},
-                        "collisions": "all" 
+                        "offset": {"x":0, "y": -1}
                     },
                     "southface-single": {
                         "width": 1,
                         "tiles": [404,
                                   406,
                                   408],
-                        "offset": {"x": 0, "y": -1},
-                        "collisions": "all"
+                        "offset": {"x": 0, "y": -1}
                     },
                     "northface": {
                         "width": 1,
                         "tiles": [400,
-                                  402],
-                        "collisions": "all"
+                                  402]
                     },
                     "westface": {
                         "width": 2,
-                        "tiles": [414, 415],
-                        "collisions": "all"
+                        "tiles": [414, 415]
                     },
                     "eastface": {
                         "width": 2,
                         "tiles": [410, 411],
-                        "offset": {"x": -1, "y": 0},
-                        "collisions": "all"
+                        "offset": {"x": -1, "y": 0}
                     },
                     "northwestface": {
                         "width": 3,
@@ -1017,7 +1152,6 @@
                                   -1, 422, 423,
                                   424, 425, 426],
                         "offset": {"x": -1, "y": -1},
-                        "collisions": "all",
                         "overwrite": true
                     },
                     "northeastface": {
@@ -1026,7 +1160,6 @@
                                   430, 431, -1,
                                   433, 434, 435],
                         "offset": {"x": -1, "y": -1},
-                        "collisions": "all",
                         "overwrite": true
                     },
                     "southwestface": {
@@ -1036,7 +1169,6 @@
                                   -1, 443, 444,
                                   -1, -1, 447],
                         "offset": {"x": -1, "y": -1},
-                        "collisions": "all",
                         "overwrite": true
                     },
                     "southeastface": {
@@ -1046,7 +1178,6 @@
                                   454, 455, -1,
                                   457, -1, -1],
                         "offset": {"x": -1, "y": -1},
-                        "collisions": "all",
                         "overwrite": true
                     }
                 },
@@ -1093,10 +1224,7 @@
                                               316, 317, 318, 319,
                                               -1, 320, 321, -1],
                                     "origin": [1, 3],
-                                    "baseSize": [2, 3],
-                                    "collisions": [
-                                        [1, 3], [1, 4], [2, 3], [2, 4]
-                                    ]
+                                    "baseSize": [2, 3]
                                 }
                             }
                         ]
@@ -1113,10 +1241,7 @@
                                               332, 333,
                                               334, 335],
                                     "origin": [0, 2],
-                                    "baseSize": [1, 2],
-                                    "collisions": [
-                                        [1, 0], [1, 1], [2, 0], [2, 1]
-                                    ]
+                                    "baseSize": [1, 2]
                                 }
                             },
                             {
@@ -1132,13 +1257,7 @@
                                               -1, 370, 371, 372, 373, -1,
                                               -1, 374, 375, 376, 377, -1],
                                     "origin": [1, 0],
-                                    "baseSize": [4, 7],
-                                    "collisions": [
-                                        [1, 0], [2, 0], [3, 0], [4, 0],
-                                        [1, 1], [2, 1], [3, 1], [4, 1],
-                                        [1, 2], [2, 2], [3, 2], [4, 2],
-                                        [1, 3], [2, 3], [3, 3], [4, 3]
-                                    ]
+                                    "baseSize": [4, 7]
                                 }
                             }
                         ]
@@ -1168,15 +1287,20 @@
                                               316, 317, 318, 319,
                                               -1, 320, 321, -1],
                                     "origin": [1, 3],
-                                    "baseSize": [2, 3],
-                                    "collisions": [
-                                        [1, 3], [1, 4], [2, 3], [2, 4]
-                                    ]
+                                    "baseSize": [2, 3]
                                 }
                             }
                         ]
                     }
                 ]
+            }
+        },
+        {
+            "plugin": "createemptylayer",
+            "description": "Create an empty object layer",
+            "options": {
+                "outputLayer": "emptyObject",
+                "type": "ObjectGroupLayer"
             }
         }
     ]

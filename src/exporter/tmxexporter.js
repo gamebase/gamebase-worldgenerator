@@ -6,7 +6,8 @@ var _ = require('underscore'),
     path = require('path'),
     layerExporters = {
         'terrain': exportTerrainLayer,
-        'tiledobject': exportTerrainLayer
+        'tiledobject': exportTerrainLayer,
+        'objectgroup': exportObjectGroup
     };
 
 function BufferedStream() {
@@ -78,7 +79,7 @@ TMXExporter.prototype.export = function(map, worldConfigFile, output, callback) 
             _.forEach(config.tilesets, function(tileset, key) {
                 var tsel = XML.Element({
                     _attr: {
-                        firstgid: "1",
+                        firstgid: tileset.firstgid || "1" ,
                         name: key,
                         tilewidth: tileset.tile.width,
                         tileheight: tileset.tile.height
@@ -94,6 +95,46 @@ TMXExporter.prototype.export = function(map, worldConfigFile, output, callback) 
                             height: tileset.image.height
                         }
                     }});                    
+                }
+                if (tileset.tiles) {
+                    var tileTypes = tileset.types || {};
+                    _.each(tileset.tiles, function(tile, tileId) {
+                        
+                        var properties = {};
+                        if (tile.types) {
+                            _.each(tile.types, function(type) {
+                                var typeInfo = tileTypes[type] || {};
+                                properties = _.extend(properties, typeInfo.properties || {});
+                            });
+                        }
+                    
+                        if (!_.isEmpty(properties)) {
+                            var tileEl = XML.Element({
+                                        _attr: {
+                                            id: parseInt(tile.gid) - 1 // Take care of TMX's weird indexing for tilesets
+                                        }
+                                    }),
+                                propertiesEl = XML.Element({});
+
+                            tsel.push({tile: tileEl});
+                            tileEl.push({properties: propertiesEl})
+
+                            _.each(properties, function(value, key) {
+                                propertiesEl.push({
+                                    property: {
+                                        _attr: {
+                                            name: key,
+                                            value: value
+                                        }
+                                    }
+                                });
+                            });
+
+                            propertiesEl.close();                        
+                            tileEl.close();
+                        }
+                                                     
+                    });
                 }
                 tsel.close();
             });
@@ -118,7 +159,7 @@ module.exports = TMXExporter;
   Appends layer information to the given root element
  **/
 function exportTerrainLayer(layer, root, config) {
-    var tileset = config.tilesets['terrain'],
+    var tileset = config.tilesets['tilesheet'],
         element = XML.Element({
             _attr: {
                 name: layer.id,
@@ -143,5 +184,22 @@ function exportTerrainLayer(layer, root, config) {
         });
     }
     data.close();
+    element.close();
+}
+
+/**
+  Appends layer information to the given root element
+ **/
+function exportObjectGroup(layer, root, config) {
+    var element = XML.Element({
+            _attr: {
+                name: layer.id,
+                width: layer.size.width,
+                height: layer.size.height
+            }
+        });
+    root.push({objectgroup: element});
+    
+    // TODO - Add exporting of objects
     element.close();
 }
